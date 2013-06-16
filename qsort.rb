@@ -4,10 +4,11 @@ module LearnMeAQuickSort
 
     def self.sort(array)
 
+        # Recursion termination clause
         return array if array.length < 2
 
         # Pick a pivot - assume it's the median value
-        pivot_index = array.length/2             
+        pivot_index = array.length / 2             
         pivot       = array[pivot_index]
 
         # Assuming the pivot is a median value, partition the array
