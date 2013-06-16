@@ -1,4 +1,4 @@
-# See http://en.wikipedia.org/wiki/Quicksort
+# See http://en.wikipedia.org/wiki/Quicksort for further discussion
 
 module LearnMeAQuickSort
 
@@ -16,8 +16,7 @@ module LearnMeAQuickSort
         pivots = array.find_all { |value| value == pivot }
         more   = array.find_all { |value| value >  pivot }
 
-        # Now put them back together with a little recursion to sort our
-        # sub-sets
+        # Now put them back together with a little recursion to sort our sub-sets
         return sort(less) + pivots + sort(more)
 
     end
