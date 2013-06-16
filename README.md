@@ -1,4 +1,4 @@
-qsort
+Learn me a quick sort!
 =====
 
-A quick sort implementation as readable as possible in Ruby. The point of this is to make it easier to explain how the quick sort algorithm works.
+Here's a simple (to read) ruby implementation of the quick sort algorithm. It's not the most optimal quick sort implementation, but I hope it's a very readable one.

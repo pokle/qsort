@@ -1,21 +1,24 @@
 # See http://en.wikipedia.org/wiki/Quicksort
 
-module TusharsQuickSort
+module LearnMeAQuickSort
 
-    def self.qsort(array)
+    def self.sort(array)
 
-        if array.length > 1
+        return array if array.length < 2
 
-            pivotIndex = array.length/2             # Pick a pivot - assume it's the median
+        # Pick a pivot - assume it's the median value
+        pivot_index = array.length/2             
+        pivot       = array[pivot_index]
 
-            pivot = array[pivotIndex]
-            less, remainder = array.partition{|i| i < pivot}
-            pivots, more    = remainder.partition{|i| i == pivot }
+        # Assuming the pivot is a median value, partition the array
+        # into three parts - values less than, equal to, and more than the pivot.
+        less   = array.find_all { |value| value <  pivot }
+        pivots = array.find_all { |value| value == pivot }
+        more   = array.find_all { |value| value >  pivot }
 
-            array = qsort(less) + pivots + qsort(more)
+        # Now put them back together with a little recursion to sort our
+        # sub-sets
+        return sort(less) + pivots + sort(more)
 
-        end
-
-        array
     end
 end
